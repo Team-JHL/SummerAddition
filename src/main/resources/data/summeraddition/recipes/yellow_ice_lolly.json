@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "summeraddition:ice_lolly"
+    },
+    {
+      "item": "minecraft:yellow_dye"
+    }
+
+  ],
+  "result": {
+    "item": "summeraddition:yellow_ice_lolly",
+    "count": 1
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ADA",
+    "ABA",
+    " C "
+  ],
+  "key": {
+    "A": {
+      "item": "ice"
+    },
+    "B": {
+      "item": "minecraft:sugar"
+    },
+    "C": {
+      "item": "minecraft:stick"
+    },
+    "D": {
+      "item": "minecraft:packed_ice"
+    }
+  },
+  "result": {
+    "item": "summeraddition:ice_lolly",
+    "count": 1
+  }
+}

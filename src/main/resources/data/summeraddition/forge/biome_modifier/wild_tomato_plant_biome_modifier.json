@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "plains",
+  "features": "summeraddition:wild_tomato_plant",
+  "step": "vegetal_decoration"
+}

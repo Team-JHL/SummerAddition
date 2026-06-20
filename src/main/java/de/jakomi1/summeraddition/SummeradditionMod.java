@@ -42,7 +42,7 @@ public class SummeradditionMod {
     private static final String PROTOCOL_VERSION = "1";
 
     public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(
-            new ResourceLocation(MODID, MODID), // Namespace + Kanalname
+            new ResourceLocation(MODID, MODID),
             () -> PROTOCOL_VERSION,
             PROTOCOL_VERSION::equals,
             PROTOCOL_VERSION::equals
@@ -50,14 +50,12 @@ public class SummeradditionMod {
 
     private static int messageID = 0;
 
-    // Thread-sichere Warteschlange für verzögerte Server-Aktionen: Runnable + verbleibende Tick-Anzahl
+
     private static final Collection<AbstractMap.SimpleEntry<Runnable, Integer>> workQueue = new ConcurrentLinkedQueue<>();
 
     public SummeradditionMod() {
-        // Registrierung beim Forge Eventbus
         MinecraftForge.EVENT_BUS.register(this);
 
-        // Mod-Eventbus für eigene Registrierungen
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         SummeradditionModBlocks.REGISTRY.register(modEventBus);
@@ -67,15 +65,7 @@ public class SummeradditionMod {
 
     }
 
-    /**
-     * Registriert eine neue Netzwerk-Nachricht im SimpleChannel.
-     *
-     * @param <T>             Nachrichtentyp
-     * @param messageType     Klasse der Nachricht
-     * @param encoder         Serialisierungsfunktion
-     * @param decoder         Deserialisierungsfunktion
-     * @param messageConsumer Verarbeitungsfunktion (Handler)
-     */
+
     public static <T> void addNetworkMessage(
             Class<T> messageType,
             BiConsumer<T, FriendlyByteBuf> encoder,
@@ -85,25 +75,15 @@ public class SummeradditionMod {
         PACKET_HANDLER.registerMessage(messageID++, messageType, encoder, decoder, messageConsumer);
     }
 
-    /**
-     * Führt eine Aktion nach einer bestimmten Anzahl von Server-Ticks aus.
-     *
-     * @param ticks  Verzögerung in Server-Ticks
-     * @param action Runnable, das ausgeführt wird
-     */
+
     public static void queueServerWork(int ticks, Runnable action) {
-        // Nur auf Server-Thread hinzufügen, um Thread-Sicherheit sicherzustellen
         if (Thread.currentThread().getThreadGroup() == SidedThreadGroups.SERVER) {
             workQueue.add(new AbstractMap.SimpleEntry<>(action, ticks));
         } else {
-            LOGGER.warn("queueServerWork wurde nicht auf dem Server-Thread aufgerufen!");
+            LOGGER.warn("queueServerWork wasn't called with server thread!");
         }
     }
 
-    /**
-     * Server-Tick Event: Verringert den Tick-Counter aller wartenden Aktionen
-     * und führt diejenigen aus, deren Countdown 0 erreicht hat.
-     */
     @SubscribeEvent
     public void onServerTick(TickEvent.ServerTickEvent event) {
         if (event.phase == Phase.END) {
@@ -122,7 +102,7 @@ public class SummeradditionMod {
                 try {
                     entry.getKey().run();
                 } catch (Exception e) {
-                    LOGGER.error("Fehler beim Ausführen einer geplanten Aktion", e);
+                    LOGGER.error(e.getMessage());
                 }
             });
 

@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "summeraddition:tomato"
+    },
+    {
+      "item": "summeraddition:tomato"
+    },
+    {
+      "item": "summeraddition:tomato"
+    },
+    {
+      "item": "summeraddition:tomato"
+    },
+    {
+      "item": "summeraddition:parsley"
+    },
+    {
+      "item": "summeraddition:parsley"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "summeraddition:tomato_stew",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/tinted_cross",
+  "textures": {
+    "cross": "summeraddition:block/wild_tomato_plant",
+    "particle": "summeraddition:block/wild_tomato_plant"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "summeraddition:item/red_ice_lolly"
+  }
+}

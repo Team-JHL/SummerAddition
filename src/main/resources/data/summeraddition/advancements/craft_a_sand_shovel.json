@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "summeraddition:sand_shovel"
+    },
+    "title": {
+      "translate": "advancements.craft_a_sand_shovel.title"
+    },
+    "description": {
+      "translate": "advancements.craft_a_sand_shovel.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "craft_a_sand_shovel_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "summeraddition:sand_shovel"
+            ],
+            "count": {
+              "min": 1,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "summeraddition:summer_addition"
+}

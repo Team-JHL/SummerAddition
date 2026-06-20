@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "summeraddition:lifeguard_tower",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 19,
+    "separation": 9,
+    "salt": 879875074
+  }
+}

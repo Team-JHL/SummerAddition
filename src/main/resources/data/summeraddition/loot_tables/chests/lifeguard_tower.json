@@ -1,0 +1,59 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": {
+        "min": 5,
+        "max": 7
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "summeraddition:red_ice_lolly",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "summeraddition:green_ice_lolly",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "summeraddition:blue_ice_lolly",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "summeraddition:yellow_ice_lolly",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "summeraddition:mixed_ice_lolly",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "summeraddition:sand_shovel",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:sand",
+          "weight": 80,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2,
+                "max": 4
+              },
+              "add": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "random_sequence": "summeraddition:blocks/sand_castle"
+}

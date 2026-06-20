@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "forest",
+  "features": "summeraddition:parsley_plant",
+  "step": "vegetal_decoration"
+}

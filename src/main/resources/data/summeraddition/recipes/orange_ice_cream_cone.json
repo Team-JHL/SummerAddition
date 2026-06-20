@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:ice"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "item": "summeraddition:cone"
+    }
+  ],
+  "result": {
+    "item": "summeraddition:orange_ice_cream_cone",
+    "count": 1
+  }
+}

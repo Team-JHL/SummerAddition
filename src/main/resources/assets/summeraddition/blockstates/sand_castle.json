@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "summeraddition:block/sand_castle"
+    },
+    "facing=east": {
+      "model": "summeraddition:block/sand_castle",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "summeraddition:block/sand_castle",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "summeraddition:block/sand_castle",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:sand"
+    },
+    "title": {
+      "translate": "advancements.build_sand_castle.title"
+    },
+    "description": {
+      "translate": "advancements.build_sand_castle.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "build_sand_castle_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "summeraddition:craft_a_sand_shovel"
+}

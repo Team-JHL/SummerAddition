@@ -1,0 +1,8 @@
+{
+  "parent": "block/tinted_cross",
+  "textures": {
+    "cross": "summeraddition:block/parsley_plant",
+    "particle": "summeraddition:block/parsley_plant"
+  },
+  "render_type": "cutout"
+}
