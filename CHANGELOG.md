@@ -1,3 +1,8 @@
+## 1.2.3
+- removed procedures:
+  - WildTomatoPlantBlockBonemealSuccessCondition
+- added WildTomatoPlantBlock performBonemeal
+
 ## 1.2.2
 - fixed item lore:
 	- all ice_cream_cones
