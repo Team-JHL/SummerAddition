@@ -37,7 +37,6 @@ public class IceLollyRightClickProcedure {
         }
         if (level.isClientSide) return;
 
-        // Set cooldown for 10 seconds (200 ticks)
         player.getCooldowns().addCooldown(stack.getItem(), 200);
 
         stack.hurtAndBreak(1, player, p -> {

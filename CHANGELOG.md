@@ -1,3 +1,6 @@
+## 1.2.4
+- fixed release bug
+
 ## 1.2.3
 - removed procedures:
   - WildTomatoPlantBlockBonemealSuccessCondition

@@ -27,11 +27,9 @@ public class SandShovelBlockDestroyedWithToolProcedure {
 
         BlockPos pos = new BlockPos((int) x, (int) y, (int) z);
 
-        // Überprüfe Blocktypen
         if (world.getBlockState(pos).getBlock() == Blocks.SAND
                 || world.getBlockState(pos).getBlock() == SummeradditionModBlocks.SAND_CASTLE.get()) {
 
-            // Simulierter Schaden (eigentlich 0, z. B. zum Triggern von Events)
             entity.hurt(new DamageSource(
                     world.registryAccess()
                             .registryOrThrow(Registries.DAMAGE_TYPE)
@@ -39,7 +37,6 @@ public class SandShovelBlockDestroyedWithToolProcedure {
             return;
         }
 
-        // Spiele Soundeffekt ab
         if (world instanceof Level level) {
             if (!level.isClientSide()) {
                 level.playSound(null, pos,
@@ -52,10 +49,9 @@ public class SandShovelBlockDestroyedWithToolProcedure {
             }
         }
 
-        // Zufällige Item-Beschädigung (max. 512 Haltbarkeit)
         if (itemstack.hurt(32, RandomSource.create(), null)) {
-            itemstack.setCount(itemstack.getCount() - 1); // Entferne Item, falls es kaputt geht
-            itemstack.setDamageValue(0); // Zurücksetzen (optional, je nach Logik)
+            itemstack.setCount(itemstack.getCount() - 1);
+            itemstack.setDamageValue(0);
         }
     }
 }
