@@ -1,6 +1,5 @@
 package de.jakomi1.summeraddition.item;
 
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 

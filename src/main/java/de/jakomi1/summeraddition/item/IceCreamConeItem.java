@@ -39,7 +39,6 @@ public class IceCreamConeItem extends Item{
         this.type = type;
     }
 
-    /** Erzeugt einen ItemStack mit NBT-Farbe */
     public ItemStack createStack() {
         ItemStack stack = new ItemStack(this);
         stack.getOrCreateTag().putString("IceCreamType", type.name());
@@ -60,12 +59,11 @@ public class IceCreamConeItem extends Item{
             }
         }
     }
-    /** Liefert eine Kopie des Standard-ItemStacks mit NBT-Farbe zurück */
+
     public ItemStack getDefaultStack() {
         return createStack().copy();
     }
 
-    /** Liest die Lolly-Farbe aus dem ItemStack */
     public static IceCreamType getType(ItemStack stack) {
         CompoundTag tag = stack.getTag();
         if (tag != null && tag.contains("IceCreamType")) {

@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package de.jakomi1.summeraddition.init;
 
 import de.jakomi1.summeraddition.block.ParsleyPlantBlock;

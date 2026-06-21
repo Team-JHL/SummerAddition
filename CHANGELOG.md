@@ -1,3 +1,7 @@
+## 1.2.5
+- removed unused code
+- added auto description updater
+
 ## 1.2.4
 - fixed release bug
 

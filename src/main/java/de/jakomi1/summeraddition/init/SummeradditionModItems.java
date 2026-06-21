@@ -1,8 +1,6 @@
 package de.jakomi1.summeraddition.init;
 
 import de.jakomi1.summeraddition.item.*;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -15,7 +13,6 @@ public class SummeradditionModItems {
     public static final DeferredRegister<Item> REGISTRY =
             DeferredRegister.create(ForgeRegistries.ITEMS, "summeraddition");
 
-    // Items
     public static final RegistryObject<Item> SAND_SHOVEL = REGISTRY.register("sand_shovel", SandShovelItem::new);
     public static final RegistryObject<Item> TOMATO = REGISTRY.register("tomato", TomatoItem::new);
     public static final RegistryObject<Item> PARSLEY = REGISTRY.register("parsley", ParsleyItem::new);
@@ -32,11 +29,9 @@ public class SummeradditionModItems {
     public static final RegistryObject<Item> ORANGE_ICE_CREAM_CONE = REGISTRY.register("orange_ice_cream_cone", () -> new IceCreamConeItem(IceCreamConeItem.IceCreamType.ORANGE));
     public static final RegistryObject<Item> LIME_ICE_CREAM_CONE = REGISTRY.register("lime_ice_cream_cone", () -> new IceCreamConeItem(IceCreamConeItem.IceCreamType.LIME));
 
-    // BlockItems
     public static final RegistryObject<Item> SAND_CASTLE = registerBlockItem(SummeradditionModBlocks.SAND_CASTLE);
     public static final RegistryObject<Item> WILD_TOMATO_PLANT = registerBlockItem(SummeradditionModBlocks.WILD_TOMATO_PLANT);
 
-    // Hilfsmethode für BlockItem-Registrierung
     private static RegistryObject<Item> registerBlockItem(RegistryObject<Block> block) {
         return REGISTRY.register(block.getId().getPath(), () ->
                 new BlockItem(block.get(), new Item.Properties()));
