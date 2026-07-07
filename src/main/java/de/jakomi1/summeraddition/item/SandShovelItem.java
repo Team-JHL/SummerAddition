@@ -46,14 +46,14 @@ public class SandShovelItem extends ShovelItem {
             }
 
             @Override
-            public Ingredient getRepairIngredient() {
+            public @NotNull Ingredient getRepairIngredient() {
                 return Ingredient.of(Items.SAND);
             }
         }, 1.0f, -3.0f, new Item.Properties());
     }
 
     @Override
-    public boolean mineBlock(ItemStack stack, Level world, BlockState state, BlockPos pos, LivingEntity entity) {
+    public boolean mineBlock(@NotNull ItemStack stack, @NotNull Level world, @NotNull BlockState state, @NotNull BlockPos pos, @NotNull LivingEntity entity) {
         boolean ret = super.mineBlock(stack, world, state, pos, entity);
         SandShovelBlockDestroyedWithToolProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity, stack);
         return ret;
@@ -61,7 +61,7 @@ public class SandShovelItem extends ShovelItem {
 
 
     @Override
-    public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(@NotNull ItemStack stack, Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
         //tooltip.add(Component.literal("This shovel only can break sand or build sand castles!"));
     }

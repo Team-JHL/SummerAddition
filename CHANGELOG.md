@@ -1,3 +1,6 @@
+## 1.2.6
+- fixed annotation bug
+
 ## 1.2.5
 - removed unused code
 - added auto description updater

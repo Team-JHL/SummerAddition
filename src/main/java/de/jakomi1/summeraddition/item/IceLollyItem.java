@@ -48,7 +48,7 @@ public class IceLollyItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
         if(type != LollyType.BASIC) {
-            IceLollyRightClickProcedure.execute(level, player, stack, type);  // echten Stack übergeben
+            IceLollyRightClickProcedure.execute(level, player, stack, type);
         }
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
     }

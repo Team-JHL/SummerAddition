@@ -33,6 +33,7 @@ public class SummeradditionModItems {
     public static final RegistryObject<Item> WILD_TOMATO_PLANT = registerBlockItem(SummeradditionModBlocks.WILD_TOMATO_PLANT);
 
     private static RegistryObject<Item> registerBlockItem(RegistryObject<Block> block) {
+        assert block.getId() != null;
         return REGISTRY.register(block.getId().getPath(), () ->
                 new BlockItem(block.get(), new Item.Properties()));
     }
