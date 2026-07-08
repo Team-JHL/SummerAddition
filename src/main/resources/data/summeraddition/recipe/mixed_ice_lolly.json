@@ -7,11 +7,20 @@
     },
     {
       "item": "minecraft:green_dye"
+    },
+    {
+      "item": "minecraft:blue_dye"
+    },
+    {
+      "item": "minecraft:yellow_dye"
+    },
+    {
+      "item": "minecraft:red_dye"
     }
 
   ],
   "result": {
-    "item": "summeraddition:green_ice_lolly",
+    "id": "summeraddition:mixed_ice_lolly",
     "count": 1
   }
 }

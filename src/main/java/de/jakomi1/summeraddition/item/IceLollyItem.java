@@ -35,11 +35,11 @@ public class IceLollyItem extends Item {
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag flag) {
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext tooltipContext, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
         if(type != LollyType.BASIC) {
             tooltip.add(Component.translatable("item.summeraddition.ice_lolly.lore"));
         }
-        super.appendHoverText(stack, level, tooltip, flag);
+        super.appendHoverText(stack, tooltipContext, tooltip, flag);
     }
 
 

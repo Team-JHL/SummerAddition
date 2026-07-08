@@ -39,16 +39,7 @@ public class IceLollyRightClickProcedure {
 
         player.getCooldowns().addCooldown(stack.getItem(), 200);
 
-        stack.hurtAndBreak(1, player, p -> {
-            p.broadcastBreakEvent(player.getUsedItemHand());
-            if (!level.isClientSide()) ((ServerLevel)level).getServer().execute(() -> player.getInventory().add(new ItemStack(Items.STICK)));
-
-        });
-
-
-
-
-        // Track consumption within 200 ticks
+        stack.hurtAndBreak(1, (ServerLevel) level, player, item -> player.getInventory().add(new ItemStack(Items.STICK)));
         if (level instanceof ServerLevel serverLevel) {
             if(player.getTicksFrozen() == 0) {
                 UUID uuid = player.getUUID();
@@ -74,7 +65,6 @@ public class IceLollyRightClickProcedure {
 
         }
 
-        // Apply color-based effects
         switch (color) {
             case RED -> player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 0));
             case GREEN -> player.addEffect(new MobEffectInstance(MobEffects.LUCK, 300, 0));

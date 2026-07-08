@@ -16,16 +16,15 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import org.jetbrains.annotations.NotNull;
 
 public class WildTomatoPlantBlock extends FlowerBlock implements BonemealableBlock {
 
-
-
     public WildTomatoPlantBlock() {
-        super(() -> MobEffects.MOVEMENT_SPEED, 100,
+        super(MobEffects.MOVEMENT_SPEED.getDelegate(), 100,
                 Properties.of()
                         .mapColor(MapColor.PLANT)
                         .sound(SoundType.CROP)
@@ -35,7 +34,7 @@ public class WildTomatoPlantBlock extends FlowerBlock implements BonemealableBlo
     }
 
     @Override
-    public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+    public int getFlammability(@NotNull BlockState state, @NotNull BlockGetter world, @NotNull BlockPos pos, Direction face) {
         return 100;
     }
 
@@ -45,7 +44,7 @@ public class WildTomatoPlantBlock extends FlowerBlock implements BonemealableBlo
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState) {
         return true;
     }
 
@@ -77,8 +76,6 @@ public class WildTomatoPlantBlock extends FlowerBlock implements BonemealableBlo
 
     @OnlyIn(Dist.CLIENT)
     public static void itemColorLoad(RegisterColorHandlersEvent.Item event) {
-        event.getItemColors().register((stack, index) -> {
-            return GrassColor.get(0.5D, 1.0D);
-        }, SummeradditionModBlocks.WILD_TOMATO_PLANT.get());
+        event.getItemColors().register((stack, index) -> GrassColor.get(0.5D, 1.0D), SummeradditionModBlocks.WILD_TOMATO_PLANT.get());
     }
 }

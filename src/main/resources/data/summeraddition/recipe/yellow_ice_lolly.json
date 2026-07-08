@@ -6,12 +6,12 @@
       "item": "summeraddition:ice_lolly"
     },
     {
-      "item": "minecraft:red_dye"
+      "item": "minecraft:yellow_dye"
     }
 
   ],
   "result": {
-    "item": "summeraddition:red_ice_lolly",
+    "id": "summeraddition:yellow_ice_lolly",
     "count": 1
   }
 }

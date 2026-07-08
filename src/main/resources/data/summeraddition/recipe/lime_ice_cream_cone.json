@@ -12,14 +12,14 @@
       "item": "minecraft:milk_bucket"
     },
     {
-      "item": "minecraft:orange_dye"
+      "item": "minecraft:lime_dye"
     },
     {
       "item": "summeraddition:cone"
     }
   ],
   "result": {
-    "item": "summeraddition:orange_ice_cream_cone",
+    "id": "summeraddition:lime_ice_cream_cone",
     "count": 1
   }
 }

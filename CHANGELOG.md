@@ -1,3 +1,6 @@
+## 1.3.0
+- updated mod to neoforge 1.21.1
+
 ## 1.2.6
 - fixed annotation bug
 

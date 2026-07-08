@@ -3,14 +3,15 @@
   "category": "misc",
   "ingredients": [
     {
-    "item": "summeraddition:ice_lolly"
+      "item": "summeraddition:ice_lolly"
     },
     {
-      "item": "minecraft:blue_dye"
+      "item": "minecraft:red_dye"
     }
+
   ],
   "result": {
-    "item": "summeraddition:blue_ice_lolly",
+    "id": "summeraddition:red_ice_lolly",
     "count": 1
   }
 }

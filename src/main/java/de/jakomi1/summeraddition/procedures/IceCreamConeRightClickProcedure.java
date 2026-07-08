@@ -5,6 +5,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -14,8 +15,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.TickEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import org.jetbrains.annotations.NotNull;
 import net.minecraft.world.entity.Display.ItemDisplay;
 
@@ -27,7 +28,7 @@ import static de.jakomi1.summeraddition.procedures.IceLollyRightClickProcedure.i
 
 public class IceCreamConeRightClickProcedure {
 
-    public static void execute(@NotNull Level world, @NotNull Player player, @NotNull ItemStack stack, IceCreamConeItem.IceCreamType type) {
+    public static void execute(@NotNull Level world, @NotNull Player player, @NotNull ItemStack stack, IceCreamConeItem.IceCreamType type, InteractionHand hand) {
         if (world.isClientSide()) {
             player.level().playSound(
                     player,
@@ -44,7 +45,7 @@ public class IceCreamConeRightClickProcedure {
         if(!player.isCrouching()) {
             player.getCooldowns().addCooldown(stack.getItem(), 200);
 
-            stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(player.getUsedItemHand()));
+            stack.hurtAndBreak(1, (ServerLevel) world, player, item -> {});
             if (world instanceof ServerLevel serverLevel) {
                 UUID uuid = player.getUUID();
                 long gameTime = serverLevel.getGameTime();
@@ -88,7 +89,7 @@ public class IceCreamConeRightClickProcedure {
                 final Vec3[] velocity = {look.scale(0.55)};
                 double gravity = 0.0185;
 
-                MinecraftForge.EVENT_BUS.addListener((TickEvent.ServerTickEvent event) -> {
+                NeoForge.EVENT_BUS.addListener((ServerTickEvent event) -> {
                     if (!display.isRemoved()) {
 
                         velocity[0] = velocity[0].subtract(0, gravity, 0);
