@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "summeraddition:tomato"
+      "id": "summeraddition:tomato"
     },
     "title": {
       "translate": "advancements.wild_tomatos.title"

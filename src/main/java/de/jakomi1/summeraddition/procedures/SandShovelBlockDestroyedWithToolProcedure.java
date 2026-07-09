@@ -1,7 +1,6 @@
 package de.jakomi1.summeraddition.procedures;
 
 import de.jakomi1.summeraddition.init.SummeradditionModBlocks;
-import de.jakomi1.summeraddition.utils.SlotUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;

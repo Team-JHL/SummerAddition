@@ -6,6 +6,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import de.jakomi1.summeraddition.init.*;
 
 import net.minecraft.resources.ResourceLocation;
+
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
@@ -25,7 +26,6 @@ public class SummeradditionMod {
             new ConcurrentLinkedQueue<>();
 
     public SummeradditionMod(IEventBus modEventBus) {
-
         NeoForge.EVENT_BUS.register(this);
 
         SummeradditionModBlocks.REGISTRY.register(modEventBus);

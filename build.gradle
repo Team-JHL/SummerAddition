@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
     id 'eclipse'
     id 'idea'
-    id 'net.neoforged.moddev' version '2.0.+'
+    id 'net.neoforged.moddev' version '2.0.141'
 }
 
 version = project.version
@@ -13,7 +13,7 @@ base {
 }
 
 java {
-    toolchain.languageVersion = JavaLanguageVersion.of(21)
+    toolchain.languageVersion = JavaLanguageVersion.of(javaVersion)
 }
 
 neoForge {
@@ -28,8 +28,8 @@ neoForge {
             server()
         }
 
-        data {
-            data()
+        clientData {
+            clientData()
 
             programArguments.addAll(
                     "--mod", project.mod_id,

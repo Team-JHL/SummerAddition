@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "summeraddition:sand_shovel"
+      "id": "summeraddition:sand_shovel"
     },
     "title": {
       "translate": "advancements.craft_a_sand_shovel.title"

@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "summeraddition:tomato_stew"
+      "id": "summeraddition:tomato_stew"
     },
     "title": {
       "translate": "advancements.tomato_stew_advancement.title"

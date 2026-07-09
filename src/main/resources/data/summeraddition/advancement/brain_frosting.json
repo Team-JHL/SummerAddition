@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "summeraddition:blue_ice_lolly"
+      "id": "summeraddition:blue_ice_lolly"
     },
     "title": {
       "translate": "advancements.brain_frosting.title"
@@ -13,7 +13,7 @@
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": true
-  },
+  }, 
   "criteria": {
     "brain_frosting_0": {
       "trigger": "minecraft:impossible"

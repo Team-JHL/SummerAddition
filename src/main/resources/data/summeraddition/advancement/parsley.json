@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "summeraddition:parsley"
+      "id": "summeraddition:parsley"
     },
     "title": {
       "translate": "advancements.parsley.title"
