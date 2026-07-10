@@ -1,3 +1,6 @@
+## 1.3.3
+- fixed ice cream cone throw animation
+
 ## 1.3.2
 - added fastStats support
 

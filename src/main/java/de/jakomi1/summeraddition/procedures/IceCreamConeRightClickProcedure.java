@@ -16,7 +16,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.tick.ServerTickEvent;
+import net.neoforged.neoforge.event.tick.ServerTickEvent.Post;
 import org.jetbrains.annotations.NotNull;
 import net.minecraft.world.entity.Display.ItemDisplay;
 
@@ -71,7 +71,7 @@ public class IceCreamConeRightClickProcedure {
         } else {
             player.setItemInHand(player.getUsedItemHand(), new ItemStack(Items.AIR));
 
-            ItemDisplay display = (ItemDisplay) EntityType.ITEM_DISPLAY.create(world);
+            ItemDisplay display = EntityType.ITEM_DISPLAY.create(world);
             if (display != null) {
                 display.setPos(player.position().add(0,1.5,0));
 
@@ -89,7 +89,7 @@ public class IceCreamConeRightClickProcedure {
                 final Vec3[] velocity = {look.scale(0.55)};
                 double gravity = 0.0185;
 
-                NeoForge.EVENT_BUS.addListener((ServerTickEvent event) -> {
+                NeoForge.EVENT_BUS.addListener((Post event) -> {
                     if (!display.isRemoved()) {
 
                         velocity[0] = velocity[0].subtract(0, gravity, 0);
@@ -141,11 +141,7 @@ public class IceCreamConeRightClickProcedure {
                         }
                     }
                 });
-
-
             }
-
         }
     }
-
 }
