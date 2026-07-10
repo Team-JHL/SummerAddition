@@ -5,6 +5,9 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 import de.jakomi1.summeraddition.init.*;
 
+import dev.faststats.ErrorTracker;
+import dev.faststats.Metrics;
+import dev.faststats.neoforge.NeoForgeContext;
 import net.minecraft.resources.ResourceLocation;
 
 import net.minecraft.server.level.ServerPlayer;
@@ -19,6 +22,11 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 
 @Mod(SummeradditionMod.MODID)
 public class SummeradditionMod {
+    public static final ErrorTracker ERROR_TRACKER = ErrorTracker.contextAware();
+    private final NeoForgeContext context = new NeoForgeContext.Factory(MODID, "a0f5d9edd476612b2f17cc3ac4dd2a80")
+            .errorTrackerService(ERROR_TRACKER)
+            .metrics(Metrics.Factory::create)
+            .create();
 
     public static final String MODID = "summeraddition";
 
