@@ -1,3 +1,6 @@
+## 1.3.1
+- fixed version bug
+
 ## 1.3.0
 - updated mod to neoforge 1.21.1 
 
